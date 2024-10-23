@@ -1,0 +1,11 @@
+# Blob Storage connection
+storage_account_key = 
+storage_account_name = 
+connect_str = 
+container_name_blob = 
+
+# Cosmos db connection
+endpoint = 
+key = 
+database_name = 
+container_name_cosmos = 

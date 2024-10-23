@@ -1,0 +1,195 @@
+Database Write Date,Date,Location,Item_Names,Value,Min_Value,Max_Value
+2024-09-02,2024-08-26,Peliyagoda Market,Beans,320-380,320,380
+2024-09-02,2024-08-26,Kandy Market,Beans,300-330,300,330
+2024-09-02,2024-08-26,Dambulla Market,Beans,300-380,300,380
+2024-09-02,2024-08-25,Meegoda Market,Beans,380-420,380,420
+2024-09-02,2024-08-26,Thambuththegam Market,Beans,380-420,380,420
+2024-09-02,2024-08-26,Keppetipola Market,Beans,300-350,300,350
+2024-09-02,2024-08-26,Nuwaraeliya Market,Beans,320-350,320,350
+2024-09-02,2024-08-26,Peliyagoda Market,Carrot,150-200,150,200
+2024-09-02,2024-08-26,Kandy Market,Carrot,160-180,160,180
+2024-09-02,2024-08-26,Dambulla Market,Carrot,160-230,160,230
+2024-09-02,2024-08-25,Meegoda Market,Carrot,180-230,180,230
+2024-09-02,2024-08-26,Thambuththegam Market,Carrot,220-260,220,260
+2024-09-02,2024-08-26,Keppetipola Market,Carrot,140-160,140,160
+2024-09-02,2024-08-26,Nuwaraeliya Market,Carrot,180-190,180,190
+2024-09-02,2024-08-26,Peliyagoda Market,Leeks,200-230,200,230
+2024-09-02,2024-08-26,Kandy Market,Leeks,220-230,220,230
+2024-09-02,2024-08-26,Dambulla Market,Leeks,200-220,200,220
+2024-09-02,2024-08-25,Meegoda Market,Leeks,200-240,200,240
+2024-09-02,2024-08-26,Thambuththegam Market,Leeks,230-270,230,270
+2024-09-02,2024-08-26,Keppetipola Market,Leeks,180-200,180,200
+2024-09-02,2024-08-26,Nuwaraeliya Market,Leeks,190-200,190,200
+2024-09-02,2024-08-26,Peliyagoda Market,Beet root,70-80,70,80
+2024-09-02,2024-08-26,Kandy Market,Beet root,70-80,70,80
+2024-09-02,2024-08-26,Dambulla Market,Beet root,50-65,50,65
+2024-09-02,2024-08-25,Meegoda Market,Beet root,70-90,70,90
+2024-09-02,2024-08-26,Norochchole Market,Beet root,50-70,50,70
+2024-09-02,2024-08-26,Thambuththegam Market,Beet root,70-80,70,80
+2024-09-02,2024-08-26,Kandy Market,Beet root (N Eliya),120-130,120,130
+2024-09-02,2024-08-26,Dambulla Market,Beet root (N Eliya),80-90,80,90
+2024-09-02,2024-08-26,Keppetipola Market,Beet root (N Eliya),80-100,80,100
+2024-09-02,2024-08-26,Nuwaraeliya Market,Beet root (N Eliya),110-120,110,120
+2024-09-02,2024-08-26,Peliyagoda Market,Knolkhol,80-100,80,100
+2024-09-02,2024-08-26,Kandy Market,Knolkhol,80-90,80,90
+2024-09-02,2024-08-26,Dambulla Market,Knolkhol,50-60,50,60
+2024-09-02,2024-08-25,Meegoda Market,Knolkhol,80-100,80,100
+2024-09-02,2024-08-26,Keppetipola Market,Knolkhol,50-70,50,70
+2024-09-02,2024-08-26,Nuwaraeliya Market,Knolkhol,60-80,60,80
+2024-09-02,2024-08-26,Peliyagoda Market,Raddish,60-80,60,80
+2024-09-02,2024-08-26,Kandy Market,Raddish,40-50,40,50
+2024-09-02,2024-08-26,Dambulla Market,Raddish,45-60,45,60
+2024-09-02,2024-08-25,Meegoda Market,Raddish,80-100,80,100
+2024-09-02,2024-08-26,Norochchole Market,Raddish,20-60,20,60
+2024-09-02,2024-08-26,Thambuththegam Market,Raddish,50-60,50,60
+2024-09-02,2024-08-26,Keppetipola Market,Raddish,30-50,30,50
+2024-09-02,2024-08-26,Nuwaraeliya Market,Raddish,40-50,40,50
+2024-09-02,2024-08-26,Kandy Market,Cabbage (N'Eliya),140-150,140,150
+2024-09-02,2024-08-25,Meegoda Market,Cabbage (N'Eliya),120-190,120,190
+2024-09-02,2024-08-26,Thambuththegam Market,Cabbage (N'Eliya),200-220,200,220
+2024-09-02,2024-08-26,Keppetipola Market,Cabbage (N'Eliya),100-130,100,130
+2024-09-02,2024-08-26,Nuwaraeliya Market,Cabbage (N'Eliya),140-150,140,150
+2024-09-02,2024-08-26,Peliyagoda Market,Cabbage (Kandy),130-160,130,160
+2024-09-02,2024-08-26,Kandy Market,Cabbage (Kandy),100-130,100,130
+2024-09-02,2024-08-26,Dambulla Market,Cabbage (Kandy),130-160,130,160
+2024-09-02,2024-08-26,Thambuththegam Market,Cabbage (Kandy),180-190,180,190
+2024-09-02,2024-08-26,Peliyagoda Market,Tomato,170-200,170,200
+2024-09-02,2024-08-26,Kandy Market,Tomato,150-170,150,170
+2024-09-02,2024-08-26,Dambulla Market,Tomato,140-180,140,180
+2024-09-02,2024-08-25,Meegoda Market,Tomato,170-200,170,200
+2024-09-02,2024-08-26,Thambuththegam Market,Tomato,100-140,100,140
+2024-09-02,2024-08-26,Keppetipola Market,Tomato,160-180,160,180
+2024-09-02,2024-08-26,Nuwaraeliya Market,Tomato,160-190,160,190
+2024-09-02,2024-08-26,Peliyagoda Market,Ladies Fingers,80-120,80,120
+2024-09-02,2024-08-26,Kandy Market,Ladies Fingers,60-70,60,70
+2024-09-02,2024-08-26,Dambulla Market,Ladies Fingers,45-60,45,60
+2024-09-02,2024-08-25,Meegoda Market,Ladies Fingers,70-100,70,100
+2024-09-02,2024-08-26,Norochchole Market,Ladies Fingers,40-60,40,60
+2024-09-02,2024-08-26,Thambuththegam Market,Ladies Fingers,30-40,30,40
+2024-09-02,2024-08-26,Peliyagoda Market,Brinjals,170-220,170,220
+2024-09-02,2024-08-26,Kandy Market,Brinjals,120-160,120,160
+2024-09-02,2024-08-26,Dambulla Market,Brinjals,140-160,140,160
+2024-09-02,2024-08-25,Meegoda Market,Brinjals,160-200,160,200
+2024-09-02,2024-08-26,Norochchole Market,Brinjals,100-180,100,180
+2024-09-02,2024-08-26,Thambuththegam Market,Brinjals,120-170,120,170
+2024-09-02,2024-08-26,Keppetipola Market,Brinjals,150-160,150,160
+2024-09-02,2024-08-26,Peliyagoda Market,Capsicum,350-600,350,600
+2024-09-02,2024-08-26,Kandy Market,Capsicum,500-550,500,550
+2024-09-02,2024-08-26,Dambulla Market,Capsicum,350-400,350,400
+2024-09-02,2024-08-25,Meegoda Market,Capsicum,430-470,430,470
+2024-09-02,2024-08-26,Norochchole Market,Capsicum,300-420,300,420
+2024-09-02,2024-08-26,Thambuththegam Market,Capsicum,430-480,430,480
+2024-09-02,2024-08-26,Keppetipola Market,Capsicum,500-550,500,550
+2024-09-02,2024-08-26,Nuwaraeliya Market,Capsicum,540-580,540,580
+2024-09-02,2024-08-26,Peliyagoda Market,Pumpkin,80-100,80,100
+2024-09-02,2024-08-26,Kandy Market,Pumpkin,60-70,60,70
+2024-09-02,2024-08-26,Dambulla Market,Pumpkin,50-65,50,65
+2024-09-02,2024-08-25,Meegoda Market,Pumpkin,70-80,70,80
+2024-09-02,2024-08-26,Thambuththegam Market,Pumpkin,50-70,50,70
+2024-09-02,2024-08-26,Keppetipola Market,Pumpkin,60-70,60,70
+2024-09-02,2024-08-26,Peliyagoda Market,Cucumber,60-70,60,70
+2024-09-02,2024-08-26,Kandy Market,Cucumber,50-60,50,60
+2024-09-02,2024-08-26,Dambulla Market,Cucumber,35-45,35,45
+2024-09-02,2024-08-25,Meegoda Market,Cucumber,40-50,40,50
+2024-09-02,2024-08-26,Norochchole Market,Cucumber,20-50,20,50
+2024-09-02,2024-08-26,Thambuththegam Market,Cucumber,30-40,30,40
+2024-09-02,2024-08-26,Keppetipola Market,Cucumber,60-70,60,70
+2024-09-02,2024-08-26,Peliyagoda Market,Bitter Gourd,120-160,120,160
+2024-09-02,2024-08-26,Kandy Market,Bitter Gourd,150-160,150,160
+2024-09-02,2024-08-26,Dambulla Market,Bitter Gourd,110-130,110,130
+2024-09-02,2024-08-25,Meegoda Market,Bitter Gourd,120-160,120,160
+2024-09-02,2024-08-26,Norochchole Market,Bitter Gourd,130-200,130,200
+2024-09-02,2024-08-26,Thambuththegam Market,Bitter Gourd,100-120,100,120
+2024-09-02,2024-08-26,Peliyagoda Market,Snake Gourd,150-200,150,200
+2024-09-02,2024-08-26,Kandy Market,Snake Gourd,100-120,100,120
+2024-09-02,2024-08-26,Dambulla Market,Snake Gourd,120-140,120,140
+2024-09-02,2024-08-25,Meegoda Market,Snake Gourd,180-200,180,200
+2024-09-02,2024-08-26,Norochchole Market,Snake Gourd,80-130,80,130
+2024-09-02,2024-08-26,Thambuththegam Market,Snake Gourd,80-100,80,100
+2024-09-02,2024-08-26,Peliyagoda Market,Drumstick,50-160,50,160
+2024-09-02,2024-08-26,Kandy Market,Drumstick,50-100,50,100
+2024-09-02,2024-08-26,Dambulla Market,Drumstick,50-70,50,70
+2024-09-02,2024-08-26,Norochchole Market,Drumstick,60-80,60,80
+2024-09-02,2024-08-26,Peliyagoda Market,Luffa,150-200,150,200
+2024-09-02,2024-08-26,Kandy Market,Luffa,150-170,150,170
+2024-09-02,2024-08-26,Dambulla Market,Luffa,120-150,120,150
+2024-09-02,2024-08-25,Meegoda Market,Luffa,180-220,180,220
+2024-09-02,2024-08-26,Norochchole Market,Luffa,100-170,100,170
+2024-09-02,2024-08-26,Thambuththegam Market,Luffa,80-110,80,110
+2024-09-02,2024-08-26,Peliyagoda Market,Long Beans,140-160,140,160
+2024-09-02,2024-08-26,Kandy Market,Long Beans,130-170,130,170
+2024-09-02,2024-08-26,Dambulla Market,Long Beans,100-120,100,120
+2024-09-02,2024-08-25,Meegoda Market,Long Beans,150-200,150,200
+2024-09-02,2024-08-26,Norochchole Market,Long Beans,80-120,80,120
+2024-09-02,2024-08-26,Thambuththegam Market,Long Beans,100-120,100,120
+2024-09-02,2024-08-26,Peliyagoda Market,Ash Plantains,160-200,160,200
+2024-09-02,2024-08-26,Kandy Market,Ash Plantains,150-180,150,180
+2024-09-02,2024-08-26,Dambulla Market,Ash Plantains,140-160,140,160
+2024-09-02,2024-08-25,Meegoda Market,Ash Plantains,200-230,200,230
+2024-09-02,2024-08-26,Thambuththegam Market,Ash Plantains,130-180,130,180
+2024-09-02,2024-08-26,Peliyagoda Market,Green Chillies,120-150,120,150
+2024-09-02,2024-08-26,Kandy Market,Green Chillies,180-220,180,220
+2024-09-02,2024-08-26,Dambulla Market,Green Chillies,100-150,100,150
+2024-09-02,2024-08-25,Meegoda Market,Green Chillies,140-150,140,150
+2024-09-02,2024-08-26,Norochchole Market,Green Chillies,100-140,100,140
+2024-09-02,2024-08-26,Thambuththegam Market,Green Chillies,100-160,100,160
+2024-09-02,2024-08-26,Keppetipola Market,Green Chillies,160-180,160,180
+2024-09-02,2024-08-26,Peliyagoda Market,Lime,300-350,300,350
+2024-09-02,2024-08-26,Kandy Market,Lime,300-320,300,320
+2024-09-02,2024-08-26,Dambulla Market,Lime,180-220,180,220
+2024-09-02,2024-08-25,Meegoda Market,Lime,270-300,270,300
+2024-09-02,2024-08-26,Thambuththegam Market,Lime,220-250,220,250
+2024-09-02,2024-08-26,Peliyagoda Market,Sweet Potatoe,80-100,80,100
+2024-09-02,2024-08-26,Kandy Market,Sweet Potatoe,70-85,70,85
+2024-09-02,2024-08-26,Dambulla Market,Sweet Potatoe,50-70,50,70
+2024-09-02,2024-08-25,Meegoda Market,Sweet Potatoe,70-90,70,90
+2024-09-02,2024-08-26,Thambuththegam Market,Sweet Potatoe,60-70,60,70
+2024-09-02,2024-08-26,Keppetipola Market,Sweet Potatoe,100-120,100,120
+2024-09-02,2024-08-26,Peliyagoda Market,Manioc,80-100,80,100
+2024-09-02,2024-08-26,Kandy Market,Manioc,70-80,70,80
+2024-09-02,2024-08-26,Dambulla Market,Manioc,70-80,70,80
+2024-09-02,2024-08-25,Meegoda Market,Manioc,100-110,100,110
+2024-09-02,2024-08-26,Norochchole Market,Manioc,70-80,70,80
+2024-09-02,2024-08-26,Thambuththegam Market,Manioc,50-60,50,60
+2024-09-02,2024-08-26,Keppetipola Market,Manioc,80-100,80,100
+2024-09-02,2024-08-26,Peliyagoda Market,Eggplant,140-170,140,170
+2024-09-02,2024-08-26,Kandy Market,Eggplant,130-150,130,150
+2024-09-02,2024-08-26,Dambulla Market,Eggplant,120-130,120,130
+2024-09-02,2024-08-25,Meegoda Market,Eggplant,150-190,150,190
+2024-09-02,2024-08-26,Norochchole Market,Eggplant,110-130,110,130
+2024-09-02,2024-08-26,Thambuththegam Market,Eggplant,100-150,100,150
+2024-09-02,2024-08-26,Peliyagoda Market,Potato(Imported),150-300,150,300
+2024-09-02,2024-08-26,Kandy Market,Potato(Imported),170-185,170,185
+2024-09-02,2024-08-26,Dambulla Market,Potato(Imported),160-170,160,170
+2024-09-02,2024-08-25,Meegoda Market,Potato(Imported),160-175,160,175
+2024-09-02,2024-08-26,Thambuththegam Market,Potato(Imported),160-185,160,185
+2024-09-02,2024-08-26,Peliyagoda Market,Potato (Welimada),320-330,320,330
+2024-09-02,2024-08-26,Keppetipola Market,Potato (Welimada),280-300,280,300
+2024-09-02,2024-08-26,Peliyagoda Market,Potato (Nuwaraeliya),350-360,350,360
+2024-09-02,2024-08-26,Kandy Market,Potato (Nuwaraeliya),350-360,350,360
+2024-09-02,2024-08-25,Meegoda Market,Potato (Nuwaraeliya),370-390,370,390
+2024-09-02,2024-08-26,Nuwaraeliya Market,Potato (Nuwaraeliya),360-370,360,370
+2024-09-02,2024-08-26,Peliyagoda Market,B'Onion Imported,180-250,180,250
+2024-09-02,2024-08-26,Kandy Market,B'Onion Imported,210-270,210,270
+2024-09-02,2024-08-26,Dambulla Market,B'Onion Imported,195-260,195,260
+2024-09-02,2024-08-25,Meegoda Market,B'Onion Imported,205-260,205,260
+2024-09-02,2024-08-26,Thambuththegam Market,B'Onion Imported,180-270,180,270
+2024-09-02,2024-08-26,Keppetipola Market,B'Onion Imported,210-280,210,280
+2024-09-02,2024-08-26,Dambulla Market,Big-onion Local,220-250,220,250
+2024-09-02,2024-08-26,Peliyagoda Market,Ambul(Rs/Kg),150-180,150,180
+2024-09-02,2024-08-26,Kandy Market,Ambul(Rs/Kg),120-150,120,150
+2024-09-02,2024-08-26,Peliyagoda Market,Kolikuttu,300-380,300,380
+2024-09-02,2024-08-26,Kandy Market,Kolikuttu,320-350,320,350
+2024-09-02,2024-08-26,Peliyagoda Market,Seeni,130-170,130,170
+2024-09-02,2024-08-26,Kandy Market,Seeni,100-130,100,130
+2024-09-02,2024-08-26,Peliyagoda Market,Anamalu  (Rs/Fruits),32-37,32,37
+2024-09-02,2024-08-26,Peliyagoda Market,Papaya (Rs/Kg),120-170,120,170
+2024-09-02,2024-08-26,Kandy Market,Papaya (Rs/Kg),140-150,140,150
+2024-09-02,2024-08-26,Peliyagoda Market,Passion Fruits(Rs/Fruit,60-65,60,65
+2024-09-02,2024-08-26,Peliyagoda Market,Pineapple - Large,470-500,470,500
+2024-09-02,2024-08-26,Peliyagoda Market,Pineapple - Medium,370-400,370,400
+2024-09-02,2024-08-26,Peliyagoda Market,Pineapple - Small,300-320,300,320
+2024-09-02,2024-08-26,Peliyagoda Market,Mango - Karthakolomban,300-320,300,320
+2024-09-02,2024-08-26,Peliyagoda Market,Woodapple,12-18,12,18
+2024-09-02,2024-08-26,Peliyagoda Market,Avocado,70-120,70,120
+2024-09-02,2024-08-26,Peliyagoda Market,Orange,90-100,90,100
