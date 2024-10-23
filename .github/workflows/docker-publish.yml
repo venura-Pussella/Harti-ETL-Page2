@@ -17,7 +17,7 @@ jobs:
     # Build and tag the Docker image
     - run: |
         # Set the image tag
-        IMAGE_TAG=banksexchangerates.azurecr.io/nsbexchangerates:latest
+        IMAGE_TAG=banksexchangerates.azurecr.io/hartetlpage2:latest
 
         # Build the Docker image (overwrites existing image with same tag)
         docker build . -t $IMAGE_TAG
