@@ -5,10 +5,10 @@ import pandas as pd
 from io import StringIO
 from dotenv import load_dotenv
 import os
-from src.configuration.configuration import STATUS_FILE
+from src.configuration.configuration import STATUS_FILE, LOG_FILE_NAME, LOG_FILE_EXTENSION, NUMBER_OF_LOG_FILES_TO_KEEP
 from datetime import datetime
 from azure.core.exceptions import ResourceNotFoundError
-import logging
+import re
 
 load_dotenv()
 
@@ -47,7 +47,6 @@ def upload_to_blob(csv_data, actual_date_str):
     blob_client.upload_blob(csv_data.encode('utf-8'), overwrite=True)
     print(f"Uploaded {file_name} to Azure Blob Storage")
 
-
 def download_processed_pdfs():
     """Downloads processed pdf link tracker from Azure blob and return it as a string 
     """
@@ -62,6 +61,41 @@ def upload_processed_pdfs(file_as_string):
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
     container_client = blob_service_client.get_container_client(container= container_name_blob) 
     blob_client = container_client.upload_blob(name=STATUS_FILE, data=file_as_string, overwrite=True)
+
+def update_logs(log_messages: list[str]):
+    # each run will generate a log file. We will only store the most recent 10 log files in the blob.
+
+    blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+    container_client = blob_service_client.get_container_client(container= container_name_blob)
+
+    # get existing log file names
+    blob_list = container_client.list_blobs()
+    log_blobs = []
+    # pattern = r'^log\d+\.txt$'
+    pattern = f'^{LOG_FILE_NAME}\d+\.{LOG_FILE_EXTENSION}$'
+    for blob in blob_list:
+        if bool(re.match(pattern, blob.name)):
+            log_blobs.append(blob.name)
+
+
+    # sort log file names in descending order (so youngest log file is at index 0)
+    log_blobs.sort(reverse=True)
+
+    # only keep the youngest specified number of log files, delete the rest
+    log_blobs_to_delete = log_blobs[NUMBER_OF_LOG_FILES_TO_KEEP - 1:]
+    for log_blob_to_delete in log_blobs_to_delete:
+        blob_client = container_client.get_blob_client(log_blob_to_delete)
+        blob_client.delete_blob()
+
+    log_file_string = ''
+
+    # add new logs to the string
+    for log_message in log_messages: log_file_string += (log_message + '\n')
+
+    # upload the new log file
+    current_datetime = datetime.now()
+    new_log_file_name = LOG_FILE_NAME + str(current_datetime.year) + str(current_datetime.month) + str(current_datetime.day) + str(current_datetime.hour) + str(current_datetime.minute) + str(current_datetime.second) + '.' + LOG_FILE_EXTENSION
+    blob_client = container_client.upload_blob(name=new_log_file_name, data=log_file_string, overwrite=True)
 
 
 

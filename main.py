@@ -1,4 +1,5 @@
 # main.py
+import logging.handlers
 import os
 import asyncio
 import platform
@@ -8,6 +9,8 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import logging # for use in Azure functions environment (replace all calls to logger object with python logging class)
+from src import logHandling
+from src.logHandling import log_messages
 import pdfminer.pdfparser
 # from src.localLogging import logger
 import pdfminer
@@ -38,10 +41,9 @@ from src.pipeline2.data_transformation import (
 from src.pipeline2.data_format_converter import (
     dataframe_to_csv_string,convert_dataframe_to_cosmos_format)
 
-from src.connector.blob import upload_to_blob, upload_processed_pdfs, download_processed_pdfs
+from src.connector.blob import upload_to_blob, upload_processed_pdfs, download_processed_pdfs, update_logs
 
 warnings.filterwarnings('ignore')
-logging.getLogger('azure').setLevel(logging.WARNING)
 
 from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv, find_dotenv
@@ -51,7 +53,6 @@ from src.configuration.configuration import WEB_SOURCE
 container_name = os.getenv('container_name_blob')
 az_blob_conn_str = os.getenv('connect_str')
 
-logging.root.setLevel(logging.INFO)
 
 
 def load_processed_pdfs(status_file_string: str):
@@ -62,6 +63,16 @@ def load_processed_pdfs(status_file_string: str):
     for line in status_file_lines:
         mySet.add(line.strip())
     return mySet
+
+def load_procssed_pdfs_as_list(status_file_string: str) -> list[str]:
+    """Expects a string consisting of pdf_link lines, returns it as a reversed list (so firt index is typically the oldest link from the Harti website)
+    """
+    list = []
+    status_file_lines = status_file_string.rsplit('\n')
+    for line in status_file_lines:
+        list.append(line.strip())
+    list.reverse()
+    return list
 
 def get_all_pdf_links(pdf_source):
     response = requests.get(pdf_source)
@@ -192,26 +203,26 @@ async def main():
 
         # Load already processed PDFs
         status_file_string = download_processed_pdfs()
-        processed_pdfs = load_processed_pdfs(status_file_string)
-
+        processed_pdfs = load_processed_pdfs(status_file_string) # set
+        processed_pdfs_list = load_procssed_pdfs_as_list(status_file_string) # list
 
         # Loop through each PDF link and process it
-        for pdf_link in pdf_links:
-            if pdf_link not in processed_pdfs:
+        for pdf_link in reversed(pdf_links): # loop thru list of pdf links, starting from oldest first
+            if pdf_link not in processed_pdfs: # this operation is fast cuz processed_pdfs is a set
                 logging.info(f"New PDF link: {pdf_link}")
                 try:
                     await process_pdf(pdf_link)   
                 except pdfminer.pdfparser.PDFSyntaxError:
                     logging.error(f"PDF Syntax Error{pdf_link}")
-                processed_pdfs.add(pdf_link)  
+                processed_pdfs_list.append(pdf_link)  
             else:
                 logging.info(f"Skipping already processed PDF link: {pdf_link}")
 
         logging.info(">>>> Data extraction process completed <<<<")
 
-        # update processed pdf tracker file in blob
+        # update processed pdf tracker file in blob (which has now processed all pdf links)
         processed_pdfs_string = ''
-        for link in processed_pdfs:
+        for link in reversed(processed_pdfs_list): # using the list here is computationally efficient, and makes the processed pdf tracker sorted in the Harti website order, making it easier for the user to review and manipulate
             processed_pdfs_string += link
             processed_pdfs_string += '\n'
         upload_processed_pdfs(processed_pdfs_string)
@@ -235,5 +246,8 @@ def run_main():
 
     # loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
+    try: update_logs(log_messages)
+    except Exception as e: logging.ERROR(f'Exception when updating logs: {e}')
+
 
 run_main()
