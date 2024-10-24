@@ -5,10 +5,9 @@ import pandas as pd
 from io import StringIO
 from dotenv import load_dotenv
 import os
-from src.configuration.configuration import STATUS_FILE
+from src.configuration.configuration import STATUS_FILE, LOG_FILE_NAME
 from datetime import datetime
 from azure.core.exceptions import ResourceNotFoundError
-import logging
 
 load_dotenv()
 
@@ -47,7 +46,6 @@ def upload_to_blob(csv_data, actual_date_str):
     blob_client.upload_blob(csv_data.encode('utf-8'), overwrite=True)
     print(f"Uploaded {file_name} to Azure Blob Storage")
 
-
 def download_processed_pdfs():
     """Downloads processed pdf link tracker from Azure blob and return it as a string 
     """
@@ -62,6 +60,20 @@ def upload_processed_pdfs(file_as_string):
     blob_service_client = BlobServiceClient.from_connection_string(connect_str)
     container_client = blob_service_client.get_container_client(container= container_name_blob) 
     blob_client = container_client.upload_blob(name=STATUS_FILE, data=file_as_string, overwrite=True)
+
+def update_logs(log_messages: list[str]):
+    blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+    container_client = blob_service_client.get_container_client(container= container_name_blob)
+
+    # get existing logs
+    try: log_file_string = container_client.download_blob(LOG_FILE_NAME, encoding='UTF-8').readall()
+    except ResourceNotFoundError: log_file_string = ''
+
+    # add new logs to existing logs
+    for log_message in log_messages: log_file_string += (log_message + '\n')
+
+    # upload all the updated logs
+    blob_client = container_client.upload_blob(name=LOG_FILE_NAME, data=log_file_string, overwrite=True)
 
 
 

@@ -4,7 +4,7 @@ import os
 
 STATUS_FILE = 'processed_pdfs.txt'
 WEB_SOURCE = 'https://www.harti.gov.lk/index.php/en/market-information/data-food-commodities-bulletin'
-
+LOG_FILE_NAME = 'log.txt'
 
 # Date column
 date_col = 'Date'

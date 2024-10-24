@@ -1,4 +1,5 @@
 # main.py
+import logging.handlers
 import os
 import asyncio
 import platform
@@ -8,6 +9,8 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import logging # for use in Azure functions environment (replace all calls to logger object with python logging class)
+from src import logHandling
+from src.logHandling import log_messages
 import pdfminer.pdfparser
 # from src.localLogging import logger
 import pdfminer
@@ -38,10 +41,9 @@ from src.pipeline2.data_transformation import (
 from src.pipeline2.data_format_converter import (
     dataframe_to_csv_string,convert_dataframe_to_cosmos_format)
 
-from src.connector.blob import upload_to_blob, upload_processed_pdfs, download_processed_pdfs
+from src.connector.blob import upload_to_blob, upload_processed_pdfs, download_processed_pdfs, update_logs
 
 warnings.filterwarnings('ignore')
-logging.getLogger('azure').setLevel(logging.WARNING)
 
 from azure.storage.blob import BlobServiceClient
 from dotenv import load_dotenv, find_dotenv
@@ -51,7 +53,6 @@ from src.configuration.configuration import WEB_SOURCE
 container_name = os.getenv('container_name_blob')
 az_blob_conn_str = os.getenv('connect_str')
 
-logging.root.setLevel(logging.INFO)
 
 
 def load_processed_pdfs(status_file_string: str):
@@ -245,5 +246,8 @@ def run_main():
 
     # loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
+    try: update_logs(log_messages)
+    except Exception as e: logging.ERROR(f'Exception when updating logs: {e}')
+
 
 run_main()
