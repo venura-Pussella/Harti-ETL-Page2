@@ -62,7 +62,12 @@ def preprocess_dataframe(df):
 def convert_dates(df_transposed):
 
     df_transposed['Date'] = df_transposed['Date'].str.replace(r'\.\d+$', '', regex=True)
-    df_transposed['Date'] = pd.to_datetime(df_transposed['Date'], format='%d/%m/%Y', errors='coerce')
+    try: df_transposed['Date'] = pd.to_datetime(df_transposed['Date'], format='%d/%m/%Y', errors='raise')
+    except ValueError: 
+        try: df_transposed['Date'] = pd.to_datetime(df_transposed['Date'], format='%Y/%m/%d', errors='raise')
+        except ValueError:
+            try: df_transposed['Date'] = pd.to_datetime(df_transposed['Date'], format='%Y-%m-%d', errors='raise')
+            except ValueError: df_transposed['Date'] = pd.to_datetime(df_transposed['Date'], format='%d-%m-%Y', errors='raise')
 
     # # Define a list of date formats to try
     # date_formats = [
