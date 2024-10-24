@@ -63,6 +63,16 @@ def load_processed_pdfs(status_file_string: str):
         mySet.add(line.strip())
     return mySet
 
+def load_procssed_pdfs_as_list(status_file_string: str) -> list[str]:
+    """Expects a string consisting of pdf_link lines, returns it as a reversed list (so firt index is typically the oldest link from the Harti website)
+    """
+    list = []
+    status_file_lines = status_file_string.rsplit('\n')
+    for line in status_file_lines:
+        list.append(line.strip())
+    list.reverse()
+    return list
+
 def get_all_pdf_links(pdf_source):
     response = requests.get(pdf_source)
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -192,26 +202,26 @@ async def main():
 
         # Load already processed PDFs
         status_file_string = download_processed_pdfs()
-        processed_pdfs = load_processed_pdfs(status_file_string)
-
+        processed_pdfs = load_processed_pdfs(status_file_string) # set
+        processed_pdfs_list = load_procssed_pdfs_as_list(status_file_string) # list
 
         # Loop through each PDF link and process it
-        for pdf_link in pdf_links:
-            if pdf_link not in processed_pdfs:
+        for pdf_link in reversed(pdf_links): # loop thru list of pdf links, starting from oldest first
+            if pdf_link not in processed_pdfs: # this operation is fast cuz processed_pdfs is a set
                 logging.info(f"New PDF link: {pdf_link}")
                 try:
                     await process_pdf(pdf_link)   
                 except pdfminer.pdfparser.PDFSyntaxError:
                     logging.error(f"PDF Syntax Error{pdf_link}")
-                processed_pdfs.add(pdf_link)  
+                processed_pdfs_list.append(pdf_link)  
             else:
                 logging.info(f"Skipping already processed PDF link: {pdf_link}")
 
         logging.info(">>>> Data extraction process completed <<<<")
 
-        # update processed pdf tracker file in blob
+        # update processed pdf tracker file in blob (which has now processed all pdf links)
         processed_pdfs_string = ''
-        for link in processed_pdfs:
+        for link in reversed(processed_pdfs_list): # using the list here is computationally efficient, and makes the processed pdf tracker sorted in the Harti website order, making it easier for the user to review and manipulate
             processed_pdfs_string += link
             processed_pdfs_string += '\n'
         upload_processed_pdfs(processed_pdfs_string)
