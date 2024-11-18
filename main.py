@@ -152,45 +152,45 @@ async def process_pdf(pdf_link):
         await write_harti_data_to_cosmosdb(cosmos_data)
         logging.info(">>>> Data Ingested to CosmosDB <<<<")
 
-        # Send success log
-        send_log(
-            service_type="Azure Functions",
-            application_name="Harti Food Price Collector Page 2",
-            project_name="Harti Food Price Prediction",
-            project_sub_name="Food Price History",
-            azure_hosting_name="AI Services",
-            developmental_language="Python",
-            description="Sri Lanka Food Prices - Azure Functions",
-            created_by="BrownsAIsevice",
-            log_print="Successfully completed data ingestion to Cosmos DB.",
-            running_within_minutes=1440,
-            error_id=0
-            )
-        logging.info("Sent success log to function monitoring service.")
+        # # Send success log
+        # send_log(
+        #     service_type="Azure Functions",
+        #     application_name="Harti Food Price Collector Page 2",
+        #     project_name="Harti Food Price Prediction",
+        #     project_sub_name="Food Price History",
+        #     azure_hosting_name="AI Services",
+        #     developmental_language="Python",
+        #     description="Sri Lanka Food Prices - Azure Functions",
+        #     created_by="BrownsAIsevice",
+        #     log_print="Successfully completed data ingestion to Cosmos DB.",
+        #     running_within_minutes=1440,
+        #     error_id=0
+        #     )
+        # logging.info("Sent success log to function monitoring service.")
 
-        logging.info(f">>>> {pdf_link} <<<<")
+        # logging.info(f">>>> {pdf_link} <<<<")
 
     except Exception as e:
         logging.error(f"Error processing PDF {pdf_link}: {e}")
 
-        # Send error log
-        send_log(
-            service_type="Azure Functions",
-            application_name="Harti Food Price Collector Page 2",
-            project_name="Harti Food Price Prediction",
-            project_sub_name="Food Price History",
-            azure_hosting_name="AI Services",
-            developmental_language="Python",
-            description="Sri Lanka Food Prices - Azure Functions",
-            created_by="BrownsAIsevice",
-            log_print="An error occurred: " + str(e),
-            running_within_minutes=1440,
-            error_id=1,
-            )
+        # # Send error log
+        # send_log(
+        #     service_type="Azure Functions",
+        #     application_name="Harti Food Price Collector Page 2",
+        #     project_name="Harti Food Price Prediction",
+        #     project_sub_name="Food Price History",
+        #     azure_hosting_name="AI Services",
+        #     developmental_language="Python",
+        #     description="Sri Lanka Food Prices - Azure Functions",
+        #     created_by="BrownsAIsevice",
+        #     log_print="An error occurred: " + str(e),
+        #     running_within_minutes=1440,
+        #     error_id=1,
+        #     )
         
-        logging.error("Sent error log to function monitoring service.")
+        # logging.error("Sent error log to function monitoring service.")
 
-        # raise     
+        # # raise     
 
 async def main():
     try:
